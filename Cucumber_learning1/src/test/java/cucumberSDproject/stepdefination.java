@@ -2,6 +2,7 @@ package cucumberSDproject;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -26,11 +27,14 @@ public class stepdefination {
 
 	@When("user enters password")
 	public void user_enters_password() {
-
+		driver.findElement(By.name("username")).sendKeys("Admin");
+		driver.findElement(By.name("password")).sendKeys("admin123");
 	}
 
 	@And("click on login button")
 	public void click_on_login_button() {
+		// System.out.println("User clicked on submit");
+		driver.findElement(By.xpath("//button[@type = 'submit']")).click();
 
 	}
 
